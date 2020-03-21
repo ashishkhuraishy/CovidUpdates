@@ -1,6 +1,7 @@
 import 'package:covid_updates/Models/reportModel.dart';
 import 'package:covid_updates/Services/reports.dart';
 import 'package:covid_updates/Widgets/chart.dart';
+import 'package:covid_updates/Widgets/details.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Report _report;
+  int fallback = 0;
 
   @override
   void initState() {
@@ -28,22 +30,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'Covid Updates',
-          style: TextStyle(color: Colors.black),
-        ),
-        centerTitle: true,
-        elevation: 0.0,
-      ),
       body: _report != null
-          ? SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  PieChartSample2(_report),
-                ],
+          ? SafeArea(
+              child: SingleChildScrollView(
+                child: Container(
+                  color: Colors.white,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              'Reports',
+                              style: Theme.of(context).textTheme.title,
+                            ),
+                            Text(
+                              '${_report.updatedTime}',
+                              style: Theme.of(context).textTheme.subtitle,
+                            )
+                          ],
+                        ),
+                      ),
+                      PieChartSample2(_report),
+                      Details(_report),
+                      Container(
+                        child: Image.asset('assets/images/covidmap.png'),
+                      )
+                    ],
+                  ),
+                ),
               ),
             )
           : Center(child: CircularProgressIndicator()),

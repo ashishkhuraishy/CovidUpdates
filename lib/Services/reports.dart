@@ -8,7 +8,7 @@ final String link = "https://corona.lmao.ninja/";
 
 Future<Report> getReport() async {
   Report report;
-  DateFormat formatter = DateFormat("MMM d y").add_jm();
+  DateFormat formatter = DateFormat("MMM d y");
 
   try {
     Response response = await get(link + "all");

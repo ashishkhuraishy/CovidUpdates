@@ -25,76 +25,78 @@ class PieChart2State extends State {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.3,
+    return Container(
       child: Card(
+        elevation: 0.0,
         color: Colors.white,
-        child: Row(
+        child: Column(
           children: <Widget>[
-            const SizedBox(
-              height: 18,
-            ),
-            Expanded(
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: PieChart(
-                  PieChartData(
-                      pieTouchData:
-                          PieTouchData(touchCallback: (pieTouchResponse) {
-                        setState(() {
-                          if (pieTouchResponse.touchInput is FlLongPressEnd ||
-                              pieTouchResponse.touchInput is FlPanEnd) {
-                            touchedIndex = -1;
-                          } else {
-                            touchedIndex = pieTouchResponse.touchedSectionIndex;
-                          }
-                        });
-                      }),
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      sectionsSpace: 0,
-                      centerSpaceRadius: 50,
-                      sections: showingSections(_report)),
-                ),
-              ),
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Text('Covid 19 Reports', style: Theme.of(context).textTheme.title,),
+            Row(
               children: <Widget>[
-                Indicator(
-                  color: Color(0xff0293ee),
-                  text: 'Confirmed',
-                  isSquare: false,
-                  percentage: perc.confirmedPerc.floorToDouble(),
+                const SizedBox(
+                  height: 18,
                 ),
-                SizedBox(
-                  height: 4,
+                Expanded(
+                  child: PieChart(
+                    PieChartData(
+                        pieTouchData:
+                            PieTouchData(touchCallback: (pieTouchResponse) {
+                          setState(() {
+                            if (pieTouchResponse.touchInput is FlLongPressEnd ||
+                                pieTouchResponse.touchInput is FlPanEnd) {
+                              touchedIndex = -1;
+                            } else {
+                              touchedIndex = pieTouchResponse.touchedSectionIndex;
+                            }
+                          });
+                        }),
+                        borderData: FlBorderData(
+                          show: false,
+                        ),
+                        sectionsSpace: 0,
+                        centerSpaceRadius: 50,
+                        sections: showingSections(_report)),
+                  ),
                 ),
-                Indicator(
-                  color: Color(0xfff8b250),
-                  text: 'Recovered',
-                  isSquare: false,
-                  percentage: perc.recoveredPerc.floorToDouble(),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Indicator(
+                      color: Colors.blue[900],
+                      text: 'Confirmed',
+                      isSquare: false,
+                      percentage: perc.confirmedPerc.roundToDouble(),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Indicator(
+                      color: Colors.blue[400],
+                      text: 'Recovered',
+                      isSquare: false,
+                      percentage: perc.recoveredPerc.roundToDouble(),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Indicator(
+                      color: Colors.red[400],
+                      text: 'Death',
+                      isSquare: false,
+                      percentage: perc.deathPerc.roundToDouble(),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 4,
-                ),
-                Indicator(
-                  color: Color(0xff845bef),
-                  text: 'Death',
-                  isSquare: false,
-                  percentage: perc.deathPerc.floorToDouble(),
-                ),
-                SizedBox(
-                  height: 20,
+                const SizedBox(
+                  width: 28,
                 ),
               ],
-            ),
-            const SizedBox(
-              width: 28,
             ),
           ],
         ),

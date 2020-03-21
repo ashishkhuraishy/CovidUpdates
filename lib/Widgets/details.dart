@@ -1,0 +1,82 @@
+import 'package:covid_updates/Models/reportModel.dart';
+import 'package:flutter/material.dart';
+
+class Details extends StatelessWidget {
+  Report report;
+  Details(this.report);
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                createDetailItem(context: context, color: Colors.blue[400], value: report.recovered, text: "Recovered"),
+                createDetailItem(context: context, color: Colors.blue[900], value: report.confirmed, text: "Affected"),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                createDetailItem( context: context, color: Colors.red, value: report.deaths, text: "Deaths"),
+                createDetailItem(context: context,value: report.totalCases, text: "Total Cases"),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+Widget createDetailItem({BuildContext context, int value, Color color , String text}) {
+  return Expanded(
+      child: Container(
+      margin: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        shape: BoxShape.rectangle,
+        border: Border.all(color: Colors.grey, width: 0.5),
+        borderRadius: BorderRadius.all(Radius.circular(5.0))
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              color != null ? Container(
+                margin: EdgeInsets.only(right: 8.0),
+                width: 13,
+                height: 13,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: color ?? Colors.transparent,
+                ),
+              ) : SizedBox(),
+              Text(
+                '$text',
+                style: Theme.of(context).textTheme.caption,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Text(
+            '$value',
+            style: Theme.of(context)
+                .textTheme
+                .headline
+                .copyWith(fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
+    ),
+  );
+}
