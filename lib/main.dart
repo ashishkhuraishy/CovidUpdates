@@ -1,5 +1,7 @@
 import 'package:covid_updates/Screens/homePage.dart';
+import 'package:covid_updates/Screens/preventionPage.dart';
 import 'package:covid_updates/Screens/reportPage.dart';
+import 'package:covid_updates/Screens/symptomsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Covid Updates',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF1E3CFF),
         textTheme: GoogleFonts.robotoTextTheme(
           Theme.of(context).textTheme
         ),
@@ -19,7 +21,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
          '/': (context) => HomePage(),
-         '/reports': (context) => ReportPage()
+         '/reports': (context) => ReportPage(),
+         '/symptoms': (context) => SymptomsPage(),
+         '/prevention': (context) => PreventioPage(),
       },
     );
   }

@@ -12,12 +12,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(""),
+        centerTitle: true,
+        elevation: 0.0,
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              color: Color(0xFF0321EC),
+              color: Color(0xFF1E3CFF),
               child: SafeArea(
                 child: Column(
                   children: <Widget>[
@@ -27,9 +32,6 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          SizedBox(
-                            height: 24.0,
-                          ),
                           Text(
                             'Prevent COVID - 19 ',
                             style: Theme.of(context).textTheme.title.copyWith(

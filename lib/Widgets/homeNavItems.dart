@@ -18,7 +18,8 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon: Icons.mood_bad,
                 title: 'Symptoms',
-                subTitle: 'Signs to Identify the risk of Infection'),
+                subTitle: 'Signs to Identify the risk of Infection',
+                navigate: 'symptoms'),
             SizedBox(
               width: 16.0,
             ),
@@ -70,7 +71,7 @@ Widget getHomePageNavItems(
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-            color: Color(0xFF1F3AEE),
+            color: Color(0xFF1A35E4),
             borderRadius: BorderRadius.all(Radius.circular(5.0))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
