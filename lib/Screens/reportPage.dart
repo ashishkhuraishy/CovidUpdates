@@ -4,12 +4,12 @@ import 'package:covid_updates/Widgets/chart.dart';
 import 'package:covid_updates/Widgets/details.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class ReportPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _ReportPageState createState() => _ReportPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ReportPageState extends State<ReportPage> {
   Report _report;
   int fallback = 0;
 

@@ -27,6 +27,7 @@ dependencies:
   intl: ^0.16.1
   http: ^0.12.0+4
   google_fonts: ^0.3.10
+  font_awesome_flutter: ^8.7.0
 
 dev_dependencies:
   flutter_test:

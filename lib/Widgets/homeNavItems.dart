@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class HomeNavItems extends StatefulWidget {
+  @override
+  _HomeNavItemsState createState() => _HomeNavItemsState();
+}
+
+class _HomeNavItemsState extends State<HomeNavItems> {
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            getHomePageNavItems(
+                context: context,
+                icon: Icons.mood_bad,
+                title: 'Symptoms',
+                subTitle: 'Signs to Identify the risk of Infection'),
+            SizedBox(
+              width: 16.0,
+            ),
+            getHomePageNavItems(
+                context: context,
+                icon: FontAwesomeIcons.solidHospital,
+                title: 'Prevention',
+                subTitle: 'Help you to avoid getting infected'),
+          ],
+        ),
+        SizedBox(height: 16.0,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            getHomePageNavItems(
+                context: context,
+                icon: Icons.insert_chart,
+                title: 'Reports',
+                subTitle: 'Data and info related to the disease'),
+            SizedBox(
+              width: 16.0,
+            ),
+            getHomePageNavItems(
+                context: context,
+                icon: FontAwesomeIcons.globeAmericas,
+                title: 'Countries',
+                subTitle: 'Countries infected by COVID-19'),
+          ],
+        ),
+        SizedBox(height: 32.0,)
+      ],
+    );
+  }
+}
+
+Widget getHomePageNavItems(
+    {BuildContext context, IconData icon, String title, String subTitle}) {
+  return Expanded(
+    child: Container(
+      padding: EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+          color: Color(0xFF1F3AEE),
+          borderRadius: BorderRadius.all(Radius.circular(5.0))),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Icon(
+            icon,
+            size: 32.0,
+            color: Colors.amber,
+          ),
+          SizedBox(
+            height: 24.0,
+          ),
+          Text(
+            title,
+            style:
+                Theme.of(context).textTheme.title.copyWith(color: Colors.white),
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            subTitle,
+            style: Theme.of(context).textTheme.caption.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w100,
+                fontSize: 10.0),
+          ),
+        ],
+      ),
+    ),
+  );
+}

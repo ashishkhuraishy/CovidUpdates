@@ -1,4 +1,5 @@
-import 'package:covid_updates/Screens/home.dart';
+import 'package:covid_updates/Screens/homePage.dart';
+import 'package:covid_updates/Screens/reportPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
+      routes: {
+         
+      },
       home: HomePage(),
     );
   }
