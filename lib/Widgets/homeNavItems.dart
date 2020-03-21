@@ -30,7 +30,9 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 subTitle: 'Help you to avoid getting infected'),
           ],
         ),
-        SizedBox(height: 16.0,),
+        SizedBox(
+          height: 16.0,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -38,7 +40,9 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon: Icons.insert_chart,
                 title: 'Reports',
-                subTitle: 'Data and info related to the disease'),
+                subTitle: 'Data and info related to the disease',
+                navigate: 'reports'
+                ),
             SizedBox(
               width: 16.0,
             ),
@@ -49,47 +53,56 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 subTitle: 'Countries infected by COVID-19'),
           ],
         ),
-        SizedBox(height: 32.0,)
+        SizedBox(
+          height: 24.0,
+        )
       ],
     );
   }
 }
 
 Widget getHomePageNavItems(
-    {BuildContext context, IconData icon, String title, String subTitle}) {
+    {BuildContext context, IconData icon, String title, String subTitle, String navigate}) {
   return Expanded(
-    child: Container(
-      padding: EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-          color: Color(0xFF1F3AEE),
-          borderRadius: BorderRadius.all(Radius.circular(5.0))),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Icon(
-            icon,
-            size: 32.0,
-            color: Colors.amber,
-          ),
-          SizedBox(
-            height: 24.0,
-          ),
-          Text(
-            title,
-            style:
-                Theme.of(context).textTheme.title.copyWith(color: Colors.white),
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          Text(
-            subTitle,
-            style: Theme.of(context).textTheme.caption.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.w100,
-                fontSize: 10.0),
-          ),
-        ],
+    child: InkWell(
+      onTap: (){
+        navigate != null ? Navigator.pushNamed(context, '/$navigate') : print("No where to go") ;
+      },
+      child: Container(
+        padding: EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+            color: Color(0xFF1F3AEE),
+            borderRadius: BorderRadius.all(Radius.circular(5.0))),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Icon(
+              icon,
+              size: 32.0,
+              color: Colors.amber,
+            ),
+            SizedBox(
+              height: 24.0,
+            ),
+            Text(
+              title,
+              style: Theme.of(context)
+                  .textTheme
+                  .title
+                  .copyWith(color: Colors.white),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(
+              subTitle,
+              style: Theme.of(context).textTheme.caption.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w100,
+                  fontSize: 10.0),
+            ),
+          ],
+        ),
       ),
     ),
   );

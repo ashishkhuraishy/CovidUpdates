@@ -1,4 +1,5 @@
 import 'package:covid_updates/Widgets/homeNavItems.dart';
+import 'package:covid_updates/Widgets/requirements.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/fa_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,36 +14,78 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        color: Color(0xFF0321EC),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: width,
-                  padding: EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        height: 24.0,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              color: Color(0xFF0321EC),
+              child: SafeArea(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: width,
+                      padding: EdgeInsets.all(24.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 24.0,
+                          ),
+                          Text(
+                            'Prevent COVID - 19 ',
+                            style: Theme.of(context).textTheme.title.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w100),
+                          ),
+                          SizedBox(
+                            height: 32.0,
+                          ),
+                          HomeNavItems(),
+                        ],
                       ),
-                      Text(
-                        'Prevent COVID - 19 ',
-                        style: Theme.of(context).textTheme.title.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.w100),
-                      ),
-                      SizedBox(
-                        height: 32.0,
-                      ),
-                      HomeNavItems(),
-                    ],
-                  ),
-                )
-              ],
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Requirments",
+                    style: Theme.of(context).textTheme.title,
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    "Help you to prevent viruses better",
+                    style: Theme.of(context).textTheme.caption,
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                ],
+              ),
+            ),
+            Requirements(),
+            Container(
+              padding: EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text('News', style: Theme.of(context).textTheme.title,),
+                  SizedBox(height: 24.0,),
+                  Center(
+                    child: Image.asset('assets/images/coming_soon.png'),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

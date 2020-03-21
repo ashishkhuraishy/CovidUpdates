@@ -43,7 +43,7 @@ class Indicator extends StatelessWidget {
               style: Theme.of(context).textTheme.caption,
             ),
             Text(
-              '$percentage%',
+              '${percentage.toStringAsFixed(2)}%',
               style: Theme.of(context).textTheme.subhead.copyWith(
                     fontWeight: FontWeight.bold,
                   ),

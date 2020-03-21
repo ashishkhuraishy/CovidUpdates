@@ -9,6 +9,7 @@ final String link = "https://corona.lmao.ninja/";
 Future<Report> getReport() async {
   Report report;
   DateFormat formatter = DateFormat("MMM d y");
+  DateFormat timeFormatter = DateFormat().add_jm();
 
   try {
     Response response = await get(link + "all");
@@ -18,7 +19,9 @@ Future<Report> getReport() async {
       recovered: data["recovered"],
       totalCases: data["cases"],
       confirmed: data['cases'] - (data['deaths'] + data['recovered']),
-      updatedTime: formatter
+      updatedDate: formatter
+          .format(DateTime.fromMillisecondsSinceEpoch(data['updated'])),
+      updatedTime: timeFormatter
           .format(DateTime.fromMillisecondsSinceEpoch(data['updated'])),
     );
     print(data);

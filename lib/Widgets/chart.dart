@@ -68,7 +68,7 @@ class PieChart2State extends State {
                       color: Colors.blue[900],
                       text: 'Confirmed',
                       isSquare: false,
-                      percentage: perc.confirmedPerc.roundToDouble(),
+                      percentage: perc.confirmedPerc,
                     ),
                     SizedBox(
                       height: 4,
@@ -77,7 +77,7 @@ class PieChart2State extends State {
                       color: Colors.blue[400],
                       text: 'Recovered',
                       isSquare: false,
-                      percentage: perc.recoveredPerc.roundToDouble(),
+                      percentage: perc.recoveredPerc,
                     ),
                     SizedBox(
                       height: 4,
@@ -86,7 +86,7 @@ class PieChart2State extends State {
                       color: Colors.red[400],
                       text: 'Death',
                       isSquare: false,
-                      percentage: perc.deathPerc.roundToDouble(),
+                      percentage: perc.deathPerc,
                     ),
                     SizedBox(
                       height: 20,
