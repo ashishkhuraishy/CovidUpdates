@@ -50,12 +50,12 @@ class _ReportPageState extends State<ReportPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  '${dateT}',
+                  '$dateT',
                   style: Theme.of(context).textTheme.subtitle,
                 ),
                 Expanded(
                   child: Text(
-                    '${timeT}',
+                    '$timeT',
                     style: Theme.of(context).textTheme.caption,
                   ),
                 )

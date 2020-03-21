@@ -1,8 +1,6 @@
 import 'package:covid_updates/Widgets/homeNavItems.dart';
 import 'package:covid_updates/Widgets/requirements.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/fa_icon.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override

@@ -9,7 +9,6 @@ class HomeNavItems extends StatefulWidget {
 class _HomeNavItemsState extends State<HomeNavItems> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
         Row(
