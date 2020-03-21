@@ -1,6 +1,8 @@
-# covid_updates
+# Covid Updates
 
-A new Flutter project.
+![](Covid%2019.png)
+
+A Flutter project inspired by @[tmrw](https://dribbble.com/tmrwstudio).
 
 ## Getting Started
 
