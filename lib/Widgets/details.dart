@@ -2,12 +2,11 @@ import 'package:covid_updates/Models/reportModel.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
-  Report report;
+  final Report report;
   Details(this.report);
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
       child: Column(
         children: <Widget>[
