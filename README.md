@@ -1,6 +1,21 @@
-# covid_updates
+# Covid Updates
 
-A new Flutter project.
+![](covid%2019.png)
+
+A Flutter project inspired by @[tmrw](https://dribbble.com/tmrwstudio).
+
+## Done
+
+- Home Page
+- Reports Page
+- Symptoms Page
+
+## ToDo
+
+ - Countries Page
+ - Prevention Page
+ 
+### Contributions are welcome
 
 ## Getting Started
 
