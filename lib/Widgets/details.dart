@@ -56,6 +56,7 @@ Widget createDetailItem({BuildContext context, int value, Color color , String t
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: color ?? Colors.transparent,
+                  borderRadius: BorderRadius.circular(2.0)
                 ),
               ) : SizedBox(),
               Text(

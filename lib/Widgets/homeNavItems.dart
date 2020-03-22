@@ -27,7 +27,9 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon: FontAwesomeIcons.solidHospital,
                 title: 'Prevention',
-                subTitle: 'Help you to avoid getting infected'),
+                subTitle: 'Help you to avoid getting infected',
+                navigate: 'prevention'
+                ),
           ],
         ),
         SizedBox(

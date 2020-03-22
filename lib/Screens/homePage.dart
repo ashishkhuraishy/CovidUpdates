@@ -17,75 +17,77 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              color: Color(0xFF1E3CFF),
-              child: SafeArea(
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                color: Color(0xFF1E3CFF),
+                child: SafeArea(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: width,
+                        padding: EdgeInsets.all(24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'Prevent COVID - 19 ',
+                              style: Theme.of(context).textTheme.title.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                            SizedBox(
+                              height: 32.0,
+                            ),
+                            HomeNavItems(),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Container(
-                      width: width,
-                      padding: EdgeInsets.all(24.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Prevent COVID - 19 ',
-                            style: Theme.of(context).textTheme.title.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w100),
-                          ),
-                          SizedBox(
-                            height: 32.0,
-                          ),
-                          HomeNavItems(),
-                        ],
-                      ),
-                    )
+                    Text(
+                      "Requirments",
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      "Help you to prevent viruses better",
+                      style: Theme.of(context).textTheme.caption,
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    ),
                   ],
                 ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Requirments",
-                    style: Theme.of(context).textTheme.title,
-                  ),
-                  SizedBox(
-                    height: 8.0,
-                  ),
-                  Text(
-                    "Help you to prevent viruses better",
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
-                ],
-              ),
-            ),
-            Requirements(),
-            Container(
-              padding: EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('News', style: Theme.of(context).textTheme.title,),
-                  SizedBox(height: 24.0,),
-                  Center(
-                    child: Image.asset('assets/images/coming_soon.png'),
-                  ),
-                ],
-              ),
-            )
-          ],
+              Requirements(),
+              Container(
+                padding: EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('News', style: Theme.of(context).textTheme.title,),
+                    SizedBox(height: 24.0,),
+                    Center(
+                      child: Image.asset('assets/images/coming_soon.png'),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
