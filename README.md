@@ -7,6 +7,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 ## Download app
 
 - [Android](output/app.apk)
+- IOS(Coming soon)
 
 ## ToDo
 
