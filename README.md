@@ -1,6 +1,6 @@
 # Covid Updates
 
-![](covid%2019.png)
+![](assets/images/covid%2019.png)
 
 A Flutter project inspired by @[tmrw](https://dribbble.com/tmrwstudio).
 

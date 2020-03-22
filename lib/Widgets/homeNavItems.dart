@@ -52,7 +52,8 @@ class _HomeNavItemsState extends State<HomeNavItems> {
                 context: context,
                 icon: FontAwesomeIcons.globeAmericas,
                 title: 'Countries',
-                subTitle: 'Countries infected by COVID-19'),
+                subTitle: 'Countries infected by COVID-19',
+                navigate: 'countries'),
           ],
         ),
         SizedBox(

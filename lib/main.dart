@@ -1,3 +1,5 @@
+import 'package:covid_updates/Screens/CountryReportPage.dart';
+import 'package:covid_updates/Screens/countriesPage.dart';
 import 'package:covid_updates/Screens/homePage.dart';
 import 'package:covid_updates/Screens/preventionPage.dart';
 import 'package:covid_updates/Screens/reportPage.dart';
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
          '/reports': (context) => ReportPage(),
          '/symptoms': (context) => SymptomsPage(),
          '/prevention': (context) => PreventioPage(),
+         '/countries' : (context) => Countriespage(),
+         '/countryReport' : (context) => CountryReportPage(),
       },
     );
   }

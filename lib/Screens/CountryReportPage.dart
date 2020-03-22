@@ -1,38 +1,39 @@
 import 'package:covid_updates/Models/reportModel.dart';
-import 'package:covid_updates/Services/reports.dart';
 import 'package:covid_updates/Widgets/chart.dart';
 import 'package:covid_updates/Widgets/details.dart';
 import 'package:flutter/material.dart';
 
-class ReportPage extends StatefulWidget {
+class CountryReportPage extends StatefulWidget {
   @override
-  _ReportPageState createState() => _ReportPageState();
+  _CountryReportPageState createState() => _CountryReportPageState();
 }
 
-class _ReportPageState extends State<ReportPage> {
+class _CountryReportPageState extends State<CountryReportPage> {
+
+  Map data = {};
   Report _report;
-  int fallback = 0;
+  CountryReport _countryReport;
 
-  @override
-  void initState() {
-    super.initState();
-    initialise();
-  }
-
-  void initialise() async {
-    Report _temp = await getReport();
-
+  void setReport(){
     setState(() {
-      _report = _temp;
+      _report = new Report(
+        deaths: _countryReport.deaths,
+        confirmed: _countryReport.confirmed,
+        recovered: _countryReport.recovered,
+        totalCases: _countryReport.totalCases,
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    data = ModalRoute.of(context).settings.arguments;
+    _countryReport = data['countryReports'];
+    setReport();
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Reports',
+          '${_countryReport.countryName}',
           style: Theme.of(context).textTheme.title,
         ),
         backgroundColor: Colors.white,
@@ -49,21 +50,16 @@ class _ReportPageState extends State<ReportPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       PieChartSample2(_report),
-                      _report.updatedDate != null ? Text(
-                        'Last Updated - ${_report.updatedDate} ${_report.updatedTime}',
-                        style: Theme.of(context).textTheme.overline,
-                      ) : SizedBox(),
                       SizedBox(
                         height: 16.0,
                       ),
-                      Details(report: _report),
+                      Details(report :_report,todayAffeced : _countryReport.todayCases, todayDeaths : _countryReport.todayDeaths),
                       Container(
                         child: Image.asset('assets/images/covidmap.png'),
                       ),
                       SizedBox(
                         height: 16.0,
                       ),
-                      
                     ],
                   ),
                 ),

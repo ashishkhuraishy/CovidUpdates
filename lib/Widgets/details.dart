@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
   final Report report;
-  Details(this.report);
+  int todayAffeced, todayDeaths;
+  Details({this.report, this.todayAffeced, this.todayDeaths});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class Details extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 createDetailItem(context: context, color: Colors.blue[400], value: report.recovered, text: "Recovered"),
-                createDetailItem(context: context, color: Colors.blue[900], value: report.confirmed, text: "Affected"),
+                createDetailItem(context: context, color: Colors.blue[900], value: report.confirmed, text: "Affected", todaysUpdate: todayAffeced),
               ],
             ),
           ),
@@ -23,7 +24,7 @@ class Details extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                createDetailItem( context: context, color: Colors.red, value: report.deaths, text: "Deaths"),
+                createDetailItem( context: context, color: Colors.red, value: report.deaths, text: "Deaths", todaysUpdate: todayDeaths),
                 createDetailItem(context: context,value: report.totalCases, text: "Total Cases"),
               ],
             ),
@@ -34,7 +35,7 @@ class Details extends StatelessWidget {
   }
 }
 
-Widget createDetailItem({BuildContext context, int value, Color color , String text}) {
+Widget createDetailItem({BuildContext context, int value, Color color , String text, int todaysUpdate}) {
   return Expanded(
       child: Container(
       margin: EdgeInsets.all(16.0),
@@ -68,12 +69,20 @@ Widget createDetailItem({BuildContext context, int value, Color color , String t
           SizedBox(
             height: 16.0,
           ),
-          Text(
-            '$value',
-            style: Theme.of(context)
-                .textTheme
-                .headline
-                .copyWith(fontWeight: FontWeight.bold),
+          Row(
+            children: <Widget>[
+              Text(
+                '$value',
+                style: Theme.of(context)
+                    .textTheme
+                    .headline
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal :8.0),
+                child: todaysUpdate != null ? Text('(+$todaysUpdate)', style: Theme.of(context).textTheme.caption,): Text(''),
+              )
+            ],
           )
         ],
       ),

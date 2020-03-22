@@ -31,3 +31,31 @@ Future<Report> getReport() async {
 
   return report;
 }
+
+Future<List<CountryReport>> getAllCountriesReport() async {
+  List<CountryReport> reports = [];
+
+  try {
+    Response response = await get(link + "countries");
+    List data = jsonDecode(response.body);
+    for (int i = 0; i < data.length; i++) {
+      CountryReport _report = new CountryReport(
+        deaths: data[i]["deaths"],
+        recovered: data[i]["recovered"],
+        totalCases: data[i]["cases"],
+        confirmed: data[i]['cases'] - (data[i]['deaths'] + data[i]['recovered']),
+        todayCases: data[i]['todayCases'],
+        todayDeaths: data[i]['todayDeaths'],
+        countryName: data[i]['country']
+      );
+      reports.add(_report);
+    }
+
+    print(data.length);
+  } catch (e) {
+    print("Exception Caught at getCountriesReport() $e");
+  }
+
+  return reports;
+}
+
