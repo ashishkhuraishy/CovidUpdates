@@ -6,7 +6,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 ## Download app
 
-- [Android](output/app.apk)
+- [Android](https://github.com/ashishkhuraishy/CovidUpdates/raw/master/output/Covid%20Updates.apk)
 - IOS(Coming soon)
 
 ## ToDo
