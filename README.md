@@ -1,21 +1,26 @@
 # Covid Updates
 
-![](assets/images/covid%2019.png)
+![app-screenshot](assets/images/covid%2019.png)
 
-A Flutter project inspired by @[tmrw](https://dribbble.com/tmrwstudio).
+A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
-## Done
+## Download app
 
-- Home Page
-- Reports Page
-- Symptoms Page
+    - [Android](build/app/outputs/apk/app.apk)
 
 ## ToDo
 
- - Countries Page
- - Prevention Page
+    - News Feature(Imp)
+    - IOS Build
+    - UI Updates
+    - Some cool animations
  
-### Contributions are welcome
+## Contributions are welcome
+
+    I will try to merge all pull requests before 48 hours.Happy coding
+
+## Credits
+    - Corona API - [Ninja](https://corona.lmao.ninja/)
 
 ## Getting Started
 
