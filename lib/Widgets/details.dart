@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
   final Report report;
-  int todayAffeced, todayDeaths;
+  final int todayAffeced, todayDeaths;
   Details({this.report, this.todayAffeced, this.todayDeaths});
 
   @override
