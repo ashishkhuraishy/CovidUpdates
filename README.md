@@ -6,7 +6,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 ## Download app
 
-- [Android](build/app/outputs/apk/app.apk)
+- [Android](output/app.apk)
 
 ## ToDo
 
@@ -20,7 +20,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
  I will try to merge all pull requests before 48 hours.Happy coding
 
 ## Credits
- - Corona API - [Ninja](https://corona.lmao.ninja/)
+ - Corona API - [NovelCOVID](https://corona.lmao.ninja/)
 
 ## Getting Started
 
