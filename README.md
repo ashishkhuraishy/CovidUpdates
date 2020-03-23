@@ -24,7 +24,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
  - Corona API - [NovelCOVID](https://corona.lmao.ninja/)
  
 ## Support me
-[Buy me a coffee](paypal.me/khuraishy)
+[Buy me a coffee](https://paypal.me/khuraishy)
 
 ## Getting Started
 
