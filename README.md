@@ -23,7 +23,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 ## Credits
  - Corona API - [NovelCOVID](https://corona.lmao.ninja/)
  
-## Show your love
+## Support me
 [Buy me a coffee](paypal.me/khuraishy)
 
 ## Getting Started
