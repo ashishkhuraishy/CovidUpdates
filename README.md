@@ -15,6 +15,10 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
     - IOS Build
     - UI Updates
     - Some cool animations
+
+## Contributers
+
+- [@dangilbert](https://github.com/dangilbert)
  
 ## Contributions are welcome
 
