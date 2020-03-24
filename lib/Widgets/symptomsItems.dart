@@ -44,7 +44,7 @@ class _PreventionItemsState extends State<PreventionItems> {
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Keep safe distance'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Stay at home if you can'),
+        getSymptomsItems(context, 'Stay home if you can'),
         SizedBox(height: 16.0,),
         
       ],
