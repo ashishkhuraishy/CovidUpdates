@@ -8,7 +8,7 @@ class Requirements extends StatelessWidget {
       children: <Widget>[
         getRequirementItems(context: context, text: 'Mask', imgSrc: 'mask', bgColor: Colors.red[100], imgColor: Colors.red[700]),
         getRequirementItems(context: context, text: 'Gloves', imgSrc: 'gloves', bgColor: Colors.amber[100], imgColor: Colors.amber[700]),
-        getRequirementItems(context: context, text: 'Alchohol', imgSrc: 'alchohol', bgColor: Colors.blue[100], imgColor: Colors.blue[700]),
+        getRequirementItems(context: context, text: 'Sanitizer', imgSrc: 'alchohol', bgColor: Colors.blue[100], imgColor: Colors.blue[700]),
         getRequirementItems(context: context, text: 'Soap', imgSrc: 'soap', bgColor: Colors.grey[300], imgColor: Colors.grey[700]),
       ],
     );
