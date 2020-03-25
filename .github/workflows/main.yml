@@ -1,0 +1,31 @@
+name:  master
+# Trigger the workflow on push to master
+on:
+  push
+#A workflow run is made up of one or more jobs. Jobs run in parallel by default.
+jobs:
+  build_ios_release:
+    runs-on: macos-latest
+    name: Build .ipa for iOS
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '1.12.13+hotfix.8'
+          channel: 'stable'
+      - run: flutter pub get
+      # build iOS version
+      - name: Build Unsigned iOS App
+        run: flutter build ios --release --no-codesign
+      - name: Wrap into IPA
+        run: |
+            # make folder, add .app then zip it and rename it to .ipa
+            mkdir -p Payload
+            mv ./build/ios/iphoneos/Runner.app Payload
+            zip -r -y Payload.zip Payload/Runner.app
+            mv Payload.zip Payload.ipa
+      - name: Archive iOS app
+        uses: actions/upload-artifact@v1
+        with:
+          name: covid-updates
+          path: Payload.ipa
