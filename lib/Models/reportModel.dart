@@ -39,6 +39,5 @@ class CountryReport {
 class CountryHistory {
   Map<DateTime, int> cases;
   Map<DateTime, int> deaths;
-  Map<DateTime, int> recovered;
-  CountryHistory({this.cases, this.deaths, this.recovered});
+  CountryHistory({this.cases, this.deaths});
 }

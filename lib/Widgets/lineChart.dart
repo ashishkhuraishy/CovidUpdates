@@ -41,7 +41,6 @@ class HistoricalChartState extends State<HistoricalChart> {
 
     dataSets.add(ChartDisplayDataSet(history.cases, Colors.blue[900], "Cases"));
     dataSets.add(ChartDisplayDataSet(history.deaths, Colors.red, "Deaths"));
-    dataSets.add(ChartDisplayDataSet(history.recovered, Colors.blue[400], "Recovered"));
   }
 
   @override
