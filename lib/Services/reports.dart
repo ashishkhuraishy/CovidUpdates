@@ -61,20 +61,18 @@ Future<List<CountryReport>> getAllCountriesReport() async {
 
 Future<CountryHistory> getCountryHistoryReport(String countryName) async {
   try {
-    Response response = await get(link + "historical/" + countryName);
+    Response response = await get(link + "v2/historical/" + countryName);
     dynamic data = jsonDecode(response.body);
 
     Map<String, dynamic> cases = data["timeline"]["cases"];
     Map<String, dynamic> deaths = data["timeline"]["deaths"];
-    Map<String, dynamic> recovered = data["timeline"]["recovered"];
 
     return new CountryHistory(
       cases: cases.map(_mapHistoryRecord),
       deaths: deaths.map(_mapHistoryRecord),
-      recovered: recovered.map(_mapHistoryRecord),
     );
   } catch (e) {
-    return new CountryHistory(cases: {}, deaths: {}, recovered: {});
+    return new CountryHistory(cases: {}, deaths: {},);
   }
 }
 
