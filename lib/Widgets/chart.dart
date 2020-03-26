@@ -31,7 +31,7 @@ class PieChart2State extends State {
         color: Colors.white,
         child: Column(
           children: <Widget>[
-            Text('Covid 19 Reports', style: Theme.of(context).textTheme.title,),
+            Text('Covid 19 Reports', style: Theme.of(context).textTheme.headline6,),
             Row(
               children: <Widget>[
                 const SizedBox(

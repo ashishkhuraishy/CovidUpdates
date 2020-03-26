@@ -29,7 +29,7 @@ Widget getRequirementItems({BuildContext context, String text, String imgSrc, Co
       SizedBox(
         height: 8.0,
       ),
-      Text(text, style: Theme.of(context).textTheme.subtitle,)
+      Text(text, style: Theme.of(context).textTheme.subtitle2,)
     ],
   );
 }
