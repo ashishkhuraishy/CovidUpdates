@@ -40,14 +40,14 @@ Future<List<CountryReport>> getAllCountriesReport() async {
     List data = jsonDecode(response.body);
     for (int i = 0; i < data.length; i++) {
       CountryReport _report = new CountryReport(
-        deaths: data[i]["deaths"],
-        recovered: data[i]["recovered"],
-        totalCases: data[i]["cases"],
-        confirmed: data[i]['cases'] - (data[i]['deaths'] + data[i]['recovered']),
-        todayCases: data[i]['todayCases'],
-        todayDeaths: data[i]['todayDeaths'],
-        countryName: data[i]['country']
-      );
+          deaths: data[i]["deaths"],
+          recovered: data[i]["recovered"],
+          totalCases: data[i]["cases"],
+          confirmed:
+              data[i]['cases'] - (data[i]['deaths'] + data[i]['recovered']),
+          todayCases: data[i]['todayCases'],
+          todayDeaths: data[i]['todayDeaths'],
+          countryName: data[i]['country']);
       reports.add(_report);
     }
 
@@ -59,3 +59,25 @@ Future<List<CountryReport>> getAllCountriesReport() async {
   return reports;
 }
 
+Future<CountryHistory> getCountryHistoryReport(String countryName) async {
+  try {
+    Response response = await get(link + "v2/historical/" + countryName);
+    dynamic data = jsonDecode(response.body);
+
+    Map<String, dynamic> cases = data["timeline"]["cases"];
+    Map<String, dynamic> deaths = data["timeline"]["deaths"];
+
+    return new CountryHistory(
+      cases: cases.map(_mapHistoryRecord),
+      deaths: deaths.map(_mapHistoryRecord),
+    );
+  } catch (e) {
+    return new CountryHistory(cases: {}, deaths: {},);
+  }
+}
+
+final DateFormat format = new DateFormat("MM/dd/yy");
+
+MapEntry<DateTime, int> _mapHistoryRecord(String dateString, dynamic count) {
+  return MapEntry<DateTime, int>(format.parse(dateString), count.toInt());
+}
