@@ -60,8 +60,6 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               "Requirements",
                               style: Theme.of(context).textTheme.headline6,
-                              "Requirements",
-                              style: Theme.of(context).textTheme.title,
                             ),
                             SizedBox(
                               height: 8.0,
