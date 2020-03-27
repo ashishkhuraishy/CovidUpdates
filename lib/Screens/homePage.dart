@@ -1,6 +1,5 @@
 import 'package:covid_updates/Widgets/homeNavItems.dart';
 import 'package:covid_updates/Widgets/requirements.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -58,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              "Requirements",
+                              "Requirments",
                               style: Theme.of(context).textTheme.title,
                             ),
                             SizedBox(
@@ -74,8 +73,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                       Requirements(),
-
+                      Requirements(),
                       Container(
                         padding: EdgeInsets.all(24.0),
                         child: Column(
