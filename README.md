@@ -7,7 +7,12 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 ## Download app
 
 - [Android](https://github.com/ashishkhuraishy/CovidUpdates/raw/master/output/Covid%20Updates.apk)
-- IOS(Coming soon)
+- [IOS](https://github.com/ashishkhuraishy/CovidUpdates/actions?query=workflow%3Amaster)
+    - Download the zip from the latest master action
+    - Extract the ipa
+    - App will require codesigning. You can either follow the instructions from:
+        - https://nzbunity.dozenzb.com/downloads/non-jailbroken/
+        - or use a service like [Signulous](https://www.signulous.com/)
 
 ## ToDo
 
@@ -15,6 +20,10 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
     - IOS Build
     - UI Updates
     - Some cool animations
+
+## Contributers
+
+- [@dangilbert](https://github.com/dangilbert)
  
 ## Contributions are welcome
 
@@ -25,6 +34,30 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
  
 ## Support me
 [Buy me a coffee](https://paypal.me/khuraishy)
+
+## LICENSE
+
+MIT License
+
+    Copyright (c) 2020 Ashish Khuraishy
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
 
 ## Getting Started
 

@@ -1,3 +1,5 @@
+import 'dart:core';
+
 class Report {
   int recovered;
   int confirmed;
@@ -32,4 +34,10 @@ class CountryReport {
       this.todayDeaths,
       this.totalCases,
       this.countryName});
+}
+
+class CountryHistory {
+  Map<DateTime, int> cases;
+  Map<DateTime, int> deaths;
+  CountryHistory({this.cases, this.deaths});
 }
