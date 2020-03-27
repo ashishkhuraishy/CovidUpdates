@@ -17,7 +17,7 @@ class _SymptomsItemsState extends State<SymptomsItems> {
         SizedBox(height: 16.0,),
         getSymptomsItems(context, 'Tiredness'),
         SizedBox(height: 16.0,),
-        getSymptomsItems(context, 'Difficulty in Breathing'),
+        getSymptomsItems(context, 'Difficulty Breathing'),
         SizedBox(height: 16.0,),
         
       ],
