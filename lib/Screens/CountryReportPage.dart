@@ -53,7 +53,7 @@ class _CountryReportPageState extends State<CountryReportPage> {
       appBar: AppBar(
         title: Text(
           '${_countryReport.countryName}',
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.headline6,
         ),
         backgroundColor: Colors.white,
         elevation: 0.0,
