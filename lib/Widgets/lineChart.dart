@@ -15,17 +15,11 @@ class HistoricalChart extends StatefulWidget {
 }
 
 class ChartDisplayDataSet {
-
   Map<DateTime, int> data;
-    Color color;
-    String title;
+  Color color;
+  String title;
 
-  ChartDisplayDataSet(
-    this.data,
-    this.color,
-    this.title
-  );
-
+  ChartDisplayDataSet(this.data, this.color, this.title);
 }
 
 class HistoricalChartState extends State<HistoricalChart> {
@@ -39,7 +33,7 @@ class HistoricalChartState extends State<HistoricalChart> {
   void initState() {
     super.initState();
 
-    dataSets.add(ChartDisplayDataSet(history.cases, Colors.blue[900], "Cases"));
+    dataSets.add(ChartDisplayDataSet(history.cases, Colors.blue[400], "Recovered"));
     dataSets.add(ChartDisplayDataSet(history.deaths, Colors.red, "Deaths"));
   }
 
@@ -57,17 +51,17 @@ class HistoricalChartState extends State<HistoricalChart> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 const SizedBox(
-                  height: 37,
+                  height: 16,
                 ),
                 Text(
                   'Historical Data',
-                  style: Theme.of(context).primaryTextTheme.subtitle.copyWith(
+                  style: Theme.of(context).primaryTextTheme.title.copyWith(
                         color: Colors.black,
                       ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
-                  height: 37,
+                  height: 24,
                 ),
                 Expanded(
                   child: Padding(
@@ -103,14 +97,22 @@ class HistoricalChartState extends State<HistoricalChart> {
       maxY: rounded.toDouble(),
       lineTouchData: LineTouchData(
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+          tooltipBgColor: Colors.grey.withOpacity(0.1),
           getTooltipItems: (spots) {
-            return spots.asMap().map((index, spot) {
-              return MapEntry(index, LineTooltipItem(
-                "${dataSets[index].title} - ${spot.y.toInt()}",
-                Theme.of(context).textTheme.body1.copyWith(color: dataSets[index].color)
-              ));
-            }).values.toList();
+            return spots
+                .asMap()
+                .map((index, spot) {
+                  return MapEntry(
+                      index,
+                      LineTooltipItem(
+                          "${dataSets[index].title} - ${spot.y.toInt()}",
+                          Theme.of(context)
+                              .textTheme
+                              .subtitle
+                              .copyWith(color: Colors.black)));
+                })
+                .values
+                .toList();
           },
         ),
         handleBuiltInTouches: true,
@@ -121,27 +123,23 @@ class HistoricalChartState extends State<HistoricalChart> {
           showTitles: true,
           interval: verticalInterval,
           getTitles: (value) {
-            return "${NumberFormat.compact(
-              
-            ).format(value.toInt())}";
+            return "${NumberFormat.compact().format(value.toInt())}";
           },
-          rotateAngle: 30.0
         ),
         bottomTitles: SideTitles(
           interval: horizontalInterval,
           showTitles: true,
           getTitles: (value) {
-            DateTime date = history.cases.keys.toList()[startIndex() + value.toInt()];
-            return DateFormat.Md().format(date);
+            DateTime date =
+                history.cases.keys.toList()[startIndex() + value.toInt()];
+            return DateFormat("MMM d").format(date);
           },
-          rotateAngle: 30.0
-          ),
+        ),
       ),
       gridData: FlGridData(
         show: true,
         verticalInterval: horizontalInterval,
         horizontalInterval: verticalInterval,
-
       ),
       borderData: FlBorderData(
         show: false,
@@ -161,7 +159,8 @@ class HistoricalChartState extends State<HistoricalChart> {
           ),
         ),
       ),
-      lineBarsData: dataSets.map((set) => _fromData(set.data, set.color)).toList(),
+      lineBarsData:
+          dataSets.map((set) => _fromData(set.data, set.color)).toList(),
     );
   }
 
@@ -182,8 +181,7 @@ class HistoricalChartState extends State<HistoricalChart> {
       barWidth: 4,
       isStrokeCapRound: true,
       dotData: FlDotData(
-        show: true,
-        dotColor: color
+        show: false,
       ),
     );
   }

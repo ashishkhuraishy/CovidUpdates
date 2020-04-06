@@ -1,5 +1,6 @@
 import 'package:covid_updates/Models/reportModel.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Details extends StatelessWidget {
   final Report report;
@@ -72,15 +73,15 @@ Widget createDetailItem({BuildContext context, int value, Color color , String t
           Row(
             children: <Widget>[
               Text(
-                '$value',
+                '${formatted(value)}',
                 style: Theme.of(context)
                     .textTheme
                     .headline
                     .copyWith(fontWeight: FontWeight.bold),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal :8.0),
-                child: todaysUpdate != null ? Text('(+$todaysUpdate)', style: Theme.of(context).textTheme.caption,): Text(''),
+                padding: const EdgeInsets.symmetric(horizontal:4.0),
+                child: todaysUpdate != null ? Text('(+$todaysUpdate)', style: Theme.of(context).textTheme.overline,): Text(''),
               )
             ],
           )
@@ -88,4 +89,10 @@ Widget createDetailItem({BuildContext context, int value, Color color , String t
       ),
     ),
   );
+}
+
+
+  String formatted(int val){
+    NumberFormat formatter = new NumberFormat('##,###' ,'en_US');
+    return formatter.format(val);
 }

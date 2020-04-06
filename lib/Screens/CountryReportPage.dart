@@ -3,7 +3,6 @@ import 'package:covid_updates/Services/reports.dart';
 import 'package:covid_updates/Widgets/chart.dart';
 import 'package:covid_updates/Widgets/details.dart';
 import 'package:covid_updates/Widgets/lineChart.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class CountryReportPage extends StatefulWidget {
@@ -60,7 +59,7 @@ class _CountryReportPageState extends State<CountryReportPage> {
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
       ),
-      body: _report != null
+      body: _report != null && _countryHistory != null
           ? SafeArea(
               child: SingleChildScrollView(
                 child: Container(
@@ -69,11 +68,11 @@ class _CountryReportPageState extends State<CountryReportPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       PieChartSample2(_report),
+                      HistoricalChart(history: _countryHistory),
                       SizedBox(
                         height: 16.0,
                       ),
                       Details(report :_report,todayAffeced : _countryReport.todayCases, todayDeaths : _countryReport.todayDeaths),
-                      _countryHistory == null ? CircularProgressIndicator() : HistoricalChart(history: _countryHistory),
                       Container(
                         child: Image.asset('assets/images/covidmap.png'),
                       ),

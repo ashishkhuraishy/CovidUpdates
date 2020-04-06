@@ -64,7 +64,7 @@ Future<CountryHistory> getCountryHistoryReport(String countryName) async {
     Response response = await get(link + "v2/historical/" + countryName);
     dynamic data = jsonDecode(response.body);
 
-    Map<String, dynamic> cases = data["timeline"]["cases"];
+    Map<String, dynamic> cases = data["timeline"]["recovered"];
     Map<String, dynamic> deaths = data["timeline"]["deaths"];
 
     return new CountryHistory(
