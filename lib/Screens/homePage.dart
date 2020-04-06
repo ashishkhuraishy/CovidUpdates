@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Text(
                               'Prevent COVID - 19 ',
-                              style: Theme.of(context).textTheme.headline6.copyWith(
+                              style: Theme.of(context).textTheme.title.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w100),
                             ),
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Text(
                               "Requirements",
-                              style: Theme.of(context).textTheme.headline6,
+                              style: Theme.of(context).textTheme.title,
                             ),
                             SizedBox(
                               height: 8.0,
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Text(
                               'News',
-                              style: Theme.of(context).textTheme.headline6,
+                              style: Theme.of(context).textTheme.title,
                             ),
                             SizedBox(
                               height: 24.0,

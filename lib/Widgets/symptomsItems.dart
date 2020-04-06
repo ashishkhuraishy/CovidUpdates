@@ -65,7 +65,7 @@ Widget getSymptomsItems(BuildContext context, String text) {
       title: Text(
         text,
         style:
-            Theme.of(context).textTheme.subtitle1.copyWith(color: Colors.white),
+            Theme.of(context).textTheme.subhead.copyWith(color: Colors.white),
       ),
       trailing: Icon(
         Icons.chrome_reader_mode,

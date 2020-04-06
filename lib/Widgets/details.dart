@@ -75,7 +75,7 @@ Widget createDetailItem({BuildContext context, int value, Color color , String t
                 '$value',
                 style: Theme.of(context)
                     .textTheme
-                    .headline5
+                    .headline
                     .copyWith(fontWeight: FontWeight.bold),
               ),
               Padding(

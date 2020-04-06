@@ -33,7 +33,7 @@ class _ReportPageState extends State<ReportPage> {
       appBar: AppBar(
         title: Text(
           'Reports',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.title,
         ),
         backgroundColor: Colors.white,
         elevation: 0.0,

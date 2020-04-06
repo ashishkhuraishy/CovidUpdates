@@ -91,7 +91,7 @@ Widget getHomePageNavItems(
               title,
               style: Theme.of(context)
                   .textTheme
-                  .headline6
+                  .title
                   .copyWith(color: Colors.white),
             ),
             SizedBox(
