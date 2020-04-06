@@ -74,7 +74,7 @@ Widget getHomePageNavItems(
       child: Container(
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-            color: Color(0xFF1A35E4),
+            color: Color(0xFF1938FE),
             borderRadius: BorderRadius.all(Radius.circular(5.0))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

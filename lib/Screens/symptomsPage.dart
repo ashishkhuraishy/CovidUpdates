@@ -17,7 +17,7 @@ class SymptomsPage extends StatelessWidget {
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(16.0),
-              color: Color(0xFF1E3CFF),
+              color: Color.fromRGBO(0,0,200,1),
               child: SymptomsItems(),
             ),
             Image.asset('assets/images/symptomMain.jpg'),

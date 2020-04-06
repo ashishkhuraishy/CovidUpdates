@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Covid Updates',
       theme: ThemeData(
-        primaryColor: Color(0xFF1E3CFF),
+        primaryColor: Color.fromRGBO(0,0,200,1),
         textTheme: GoogleFonts.robotoTextTheme(
           Theme.of(context).textTheme
         ),

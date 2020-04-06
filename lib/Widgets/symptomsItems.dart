@@ -55,7 +55,7 @@ class _PreventionItemsState extends State<PreventionItems> {
 Widget getSymptomsItems(BuildContext context, String text) {
   return Container(
     decoration: BoxDecoration(
-        color: Color(0xFF1A35E4),
+        color: Color(0xFF1938FE),
         borderRadius: BorderRadius.all(Radius.circular(5.0))),
     child: ListTile(
       leading: Icon(

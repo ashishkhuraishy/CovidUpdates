@@ -22,7 +22,7 @@ class _PreventioPageState extends State<PreventioPage> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(16.0),
-              color: Color(0xFF1E3CFF),
+              color: Color.fromRGBO(0,0,200,1),
               child: PreventionItems(),
             ),
             Image.asset('assets/images/doctor1.jpg'),

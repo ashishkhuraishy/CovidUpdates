@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xFF1E3CFF),
+      backgroundColor: Color.fromRGBO(0,0,200,1),
       body: SafeArea(
         child: Container(
           child: SingleChildScrollView(
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  color: Color(0xFF1E3CFF),
+                  color: Color.fromRGBO(0,0,200,1),
                   child: Column(
                     children: <Widget>[
                       Container(
