@@ -6,7 +6,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 ## Download app
 
-- [Android](https://github.com/ashishkhuraishy/CovidUpdates/raw/master/output/Covid%20Updates.apk)
+- [Android](https://github.com/ashishkhuraishy/CovidUpdates/raw/master/output/V1.1/covidUpdatesV1.1.apk)
 - [IOS](https://github.com/ashishkhuraishy/CovidUpdates/actions?query=workflow%3Amaster)
     - Download the zip from the latest master action
     - Extract the ipa
@@ -16,15 +16,14 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 ## ToDo
 
-    - News Feature(Imp)
-    - IOS Build
     - UI Updates
     - Some cool animations
 
 ## Contributers
 
 - [@dangilbert](https://github.com/dangilbert)
- 
+- [@alceil](https://github.com/alceil)
+
 ## Contributions are welcome
 
  I will try to merge all pull requests before 48 hours.Happy coding
