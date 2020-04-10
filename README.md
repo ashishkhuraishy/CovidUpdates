@@ -16,15 +16,14 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 ## ToDo
 
-    - News Feature(Imp)
-    - IOS Build
     - UI Updates
     - Some cool animations
 
 ## Contributers
 
 - [@dangilbert](https://github.com/dangilbert)
- 
+- [@alceil](https://github.com/alceil)
+
 ## Contributions are welcome
 
  I will try to merge all pull requests before 48 hours.Happy coding
