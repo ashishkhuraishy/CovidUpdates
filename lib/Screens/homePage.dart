@@ -13,7 +13,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(0,0,200,1),
+      appBar: AppBar(
+        title: Text(
+          "Prevent COVID - 19",
+        ),
+        centerTitle: true,
+        elevation: 0.0,
+      ),
+      backgroundColor: Color.fromRGBO(0, 0, 200, 1),
       body: SafeArea(
         child: Container(
           child: SingleChildScrollView(
@@ -21,7 +28,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  color: Color.fromRGBO(0,0,200,1),
+                  color: Color.fromRGBO(0, 0, 200, 1),
                   child: Column(
                     children: <Widget>[
                       Container(
@@ -30,15 +37,6 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(
-                              'Prevent COVID - 19 ',
-                              style: Theme.of(context).textTheme.title.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100),
-                            ),
-                            SizedBox(
-                              height: 32.0,
-                            ),
                             HomeNavItems(),
                           ],
                         ),
@@ -74,8 +72,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                       Requirements(),
-
+                      Requirements(),
                       Container(
                         padding: EdgeInsets.all(24.0),
                         child: Column(

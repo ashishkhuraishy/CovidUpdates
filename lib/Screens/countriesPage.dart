@@ -78,14 +78,18 @@ class _CountriespageState extends State<Countriespage> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: ListTile(
-                          onTap: (){
-                            Navigator.pushNamed(context, '/countryReport', arguments: {
-                              "countryReports" : _filteredReports[index],
-                            });
+                          onTap: () {
+                            Navigator.pushNamed(context, '/countryReport',
+                                arguments: {
+                                  "countryReports": _filteredReports[index],
+                                });
                           },
                           leading: FaIcon(FontAwesomeIcons.globeAmericas),
                           title: Text(_filteredReports[index].countryName),
-                          trailing: Icon(Icons.open_in_new, color: Color(0xFF1E3CFF),),
+                          trailing: Icon(
+                            Icons.open_in_new,
+                            color: Color(0xFF1E3CFF),
+                          ),
                         ),
                       );
                     },
@@ -95,7 +99,11 @@ class _CountriespageState extends State<Countriespage> {
             ))
         : Scaffold(
             body: Center(
-              child: CircularProgressIndicator(),
+              child: Image(
+                image: new AssetImage("assets/images/loader.gif"),
+                height: 100,
+                width: 100,
+              ),
             ),
           );
   }
