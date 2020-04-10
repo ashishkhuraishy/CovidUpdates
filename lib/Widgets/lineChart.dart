@@ -1,8 +1,8 @@
+import 'dart:math';
+
 import 'package:covid_updates/Models/reportModel.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
-
 import 'package:intl/intl.dart';
 
 class HistoricalChart extends StatefulWidget {
@@ -33,7 +33,8 @@ class HistoricalChartState extends State<HistoricalChart> {
   void initState() {
     super.initState();
 
-    dataSets.add(ChartDisplayDataSet(history.cases, Colors.blue[400], "Recovered"));
+    dataSets
+        .add(ChartDisplayDataSet(history.cases, Colors.blue[400], "Recovered"));
     dataSets.add(ChartDisplayDataSet(history.deaths, Colors.red, "Deaths"));
   }
 
@@ -50,9 +51,6 @@ class HistoricalChartState extends State<HistoricalChart> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                const SizedBox(
-                  height: 16,
-                ),
                 Text(
                   'Historical Data',
                   style: Theme.of(context).primaryTextTheme.title.copyWith(

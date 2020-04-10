@@ -49,10 +49,12 @@ class _ReportPageState extends State<ReportPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       PieChartSample2(_report),
-                      _report.updatedDate != null ? Text(
-                        'Last Updated - ${_report.updatedDate} ${_report.updatedTime}',
-                        style: Theme.of(context).textTheme.overline,
-                      ) : SizedBox(),
+                      _report.updatedDate != null
+                          ? Text(
+                              'Last Updated - ${_report.updatedDate} ${_report.updatedTime}',
+                              style: Theme.of(context).textTheme.overline,
+                            )
+                          : SizedBox(),
                       SizedBox(
                         height: 16.0,
                       ),
@@ -63,13 +65,18 @@ class _ReportPageState extends State<ReportPage> {
                       SizedBox(
                         height: 16.0,
                       ),
-                      
                     ],
                   ),
                 ),
               ),
             )
-          : Center(child: CircularProgressIndicator()),
+          : Center(
+              child: Image(
+                image: new AssetImage("assets/images/loader.gif"),
+                height: 100,
+                width: 100,
+              ),
+            ),
     );
   }
 }

@@ -31,12 +31,8 @@ class PieChart2State extends State {
         color: Colors.white,
         child: Column(
           children: <Widget>[
-            Text('Covid 19 Reports', style: Theme.of(context).textTheme.title,),
             Row(
               children: <Widget>[
-                const SizedBox(
-                  height: 18,
-                ),
                 Expanded(
                   child: PieChart(
                     PieChartData(
@@ -47,7 +43,8 @@ class PieChart2State extends State {
                                 pieTouchResponse.touchInput is FlPanEnd) {
                               touchedIndex = -1;
                             } else {
-                              touchedIndex = pieTouchResponse.touchedSectionIndex;
+                              touchedIndex =
+                                  pieTouchResponse.touchedSectionIndex;
                             }
                           });
                         }),

@@ -4,6 +4,7 @@ import 'package:covid_updates/Screens/homePage.dart';
 import 'package:covid_updates/Screens/preventionPage.dart';
 import 'package:covid_updates/Screens/reportPage.dart';
 import 'package:covid_updates/Screens/symptomsPage.dart';
+import 'package:covid_updates/Widgets/scroll_behavior.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,23 +14,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: ScrollBehaviors(),
+          child: child,
+        );
+      },
       title: 'Covid Updates',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(0,0,200,1),
-        textTheme: GoogleFonts.robotoTextTheme(
-          Theme.of(context).textTheme
-        ),
+        primaryColor: Color.fromRGBO(0, 0, 200, 1),
+        textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-         '/': (context) => HomePage(),
-         '/reports': (context) => ReportPage(),
-         '/symptoms': (context) => SymptomsPage(),
-         '/prevention': (context) => PreventioPage(),
-         '/countries' : (context) => Countriespage(),
-         '/countryReport' : (context) => CountryReportPage(),
+        '/': (context) => HomePage(),
+        '/reports': (context) => ReportPage(),
+        '/symptoms': (context) => SymptomsPage(),
+        '/prevention': (context) => PreventioPage(),
+        '/countries': (context) => Countriespage(),
+        '/countryReport': (context) => CountryReportPage(),
       },
     );
   }
 }
-
