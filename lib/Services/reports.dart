@@ -4,7 +4,7 @@ import 'package:covid_updates/Models/reportModel.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
-final String link = "https://corona.lmao.ninja/";
+final String link = "https://corona.lmao.ninja/v2/";
 
 Future<Report> getReport() async {
   Report report;
@@ -61,7 +61,7 @@ Future<List<CountryReport>> getAllCountriesReport() async {
 
 Future<CountryHistory> getCountryHistoryReport(String countryName) async {
   try {
-    Response response = await get(link + "v2/historical/" + countryName);
+    Response response = await get(link + "historical/" + countryName);
     dynamic data = jsonDecode(response.body);
 
     Map<String, dynamic> cases = data["timeline"]["recovered"];
