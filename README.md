@@ -23,6 +23,7 @@ A Flutter project inspired by [@tmrw](https://dribbble.com/tmrwstudio).
 
 - [@dangilbert](https://github.com/dangilbert)
 - [@alceil](https://github.com/alceil)
+- [@sanket-vekariya](https://github.com/sanket-vekariya)
 
 ## Contributions are welcome
 
